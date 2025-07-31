@@ -1,0 +1,118 @@
+
+{
+  "drills": [
+    {
+      "cluster": "home_row",
+      "class number": "1A",
+      "text": "sad lad sad lad\nask flask ask flask\nsallall sallall sallall\njackskid jackskid\njazz; jazz; jazz;\nfailfail failask failfail\nsass;jail sass;jail\n"
+    },
+    {
+      "cluster": "home_row",
+      "class number": "2B",
+      "text": "saljidak; flassid;\njaklas; dalkask;\nskallajid; jaskilda\nfask; dalk; allskil\nsilkda; fallakid\n"
+    },
+    {
+      "cluster": "home_row",
+      "class number": "3C",
+      "text": "askflasksaldaskjailskad\nsaladfaldskidjazzlassk\nfailjackladleaskdarksass\njaildashflaskfailalassid\nskidjailjackflasksald;\njazzaskflaskjaildask\n"
+    },
+    {
+      "cluster": "vertical_expansion",
+      "class number": "2A",
+      "text": "wet red set fed\nzoo sad mad\nvet jet net bet\ncab jab nab\nzoojack fedask\nmood lad zip\n"
+    },
+    {
+      "cluster": "vertical_expansion",
+      "class number": "2B",
+      "text": "top zap lad\nwet cab ask\nmop dad vet\nmud fed zip\nweb mob sad\n"
+    },
+    {
+      "cluster": "vertical_expansion",
+      "class number": "2C",
+      "text": "wetzapmoodcabjackfed\nmobnetdashzipasklad\ncabwetfedjazzzipdad\nzoodadjabladskidmop\n"
+    },
+    {
+      "cluster": "high_frequency_words",
+      "class number": "3A",
+      "text": "the and that with for you are his they this have from not had were she we their which more will would can could one all there use each other about many then them these so some her him into just time people now way even new like only"
+    },
+    {
+      "cluster": "high_frequency_words",
+      "class number": "3B",
+      "text": "do does done been being have had has what where when how why who which over under again must should shall any much such before after still never every few both few while between back off around always often once very most least"
+    },
+    {
+      "cluster": "slow_word_repeats",
+      "class number": "4A",
+      "text": "askdark askdark askdark failflask failflask failflask jailskids jailskids jailskids jackfail jackfail jackfail sassladle sassladle sassladle sealjazz sealjazz sealjazz ladskid ladskid ladskid"
+    },
+    {
+      "cluster": "slow_word_repeats",
+      "class number": "4B",
+      "text": "flaskfail flaskfail flaskfail darkskid darkskid darkskid jazzjack jazzjack jazzjack sassask sassask sassask jailflask jailflask jailflask ladlefail ladlefail ladlefail darkjack darkjack darkjack"
+    },
+    {
+      "cluster": "transitions",
+      "class number": "5A",
+      "text": "that then than them bring string thing swing light night sight fight tight bright fright might stat stand strap stack mint mind mend must melt belt felt dealt print plant blunt grant"
+    },
+    {
+      "cluster": "transitions",
+      "class number": "5B",
+      "text": "split spot spin spat snap snapper snapple sprint sprinted strength strange stranger trust thrust thrusting crunch brunch drench french bench punch lunch munch bunch stack slack black crack smack snack"
+    },
+    {
+      "cluster": "ending_patterns",
+      "class number": "6A",
+      "text": "running jumping thinking turning helping cooking failing crying missing laughing smiling folding bending staying hoping grabbing working growing learning flying moving feeling sending calling staring slicing dancing hugging caring"
+    },
+    {
+      "cluster": "ending_patterns",
+      "class number": "6B",
+      "text": "baked cooked sliced cleaned reached placed touched started ended called joined helped warned healed walked played delayed copied studied forced burned feared feared hoped hugged ruled mailed mailed mailed"
+    },
+    {
+      "cluster": "character_weakness",
+      "class number": "7A",
+      "text": "qaz qaz qaz qpqp qpqp qpqp zxzx zxzx zxzx bvbn bvbn bvbn sxz sxz sxz szsx szsx szsx qzx qzx qzx plm plm plm mlp mlp mlp zxcvbn qazwsxed qazwsxed"
+    },
+    {
+      "cluster": "character_weakness",
+      "class number": "7B",
+      "text": "qpqpqpqpqp zxzxzxzxzx bvbnbvbnbv sxzszsxzsx qzxpqzxp plmplmplmp qazxsw qazxsw qazxsw zxqzxqzxq zxcpzxcp zxqplzxqpl zsxqazsxqa zxvbnmzxcv qazxswedc qazxswedc qazxswedc"
+    },
+    {
+      "cluster": "punctuation_and_symbols",
+      "class number": "8A",
+      "text": "She said, \"Wait!\" (then left). Do you need help? Yes/no. [Start] > Run -> End; Press 'Enter' when ready. Type: hello@example.com or visit www.example.org — fast, simple, clear. He asked, “Really?” Yes, really."
+    },
+    {
+      "cluster": "punctuation_and_symbols",
+      "class number": "8B",
+      "text": "Total: $45.67 — Due: now! Click 'Yes' to continue; 'No' to cancel. Warning: Access denied. Try again. Use keys: ctrl+z, ctrl+c, ctrl+v. Ready (y/n)? File path: C:\\User\\Docs\\test.txt — complete? Yes!"
+    },
+    {
+      "cluster": "sentence_flow",
+      "class number": "9A",
+      "text": "The quick brown fox jumps over the lazy dog. Typing practice builds rhythm and strength. Focus first on accuracy, then slowly introduce speed. Mistakes happen — slow down, breathe, and recover. Good posture helps your form."
+    },
+    {
+      "cluster": "sentence_flow",
+      "class number": "9B",
+      "text": "Every good sentence flows naturally and feels smooth to the mind. When fingers hesitate, the thought often breaks. Stay steady. Let your hands glide. Read ahead, anticipate the keys, and move with rhythm — not force, but ease."
+    },
+    {
+      "cluster": "precision_speed_rounds",
+      "class number": "10A",
+      "text": "fast fast faster! slow slow slower. jack jumped just in time. can you keep up with this line? move with care — aim for clarity. don't rush blindly. hit every key like it matters, because it does. keep moving!"
+    },
+    {
+      "cluster": "precision_speed_rounds",
+      "class number": "10B",
+      "text": "dash, then tap — quick! pause; then go. miss. hit. mark. reset. now go again! the goal: sharp and clean hits under pressure. you know the keys — trust your fingers. focus, breathe, fire through. precision builds power."
+    }
+  ]
+}
+
+    
+    

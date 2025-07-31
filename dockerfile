@@ -3,7 +3,7 @@ FROM python:3.11-slim-bullseye
 
 # Install system dependencies and clean up to reduce vulnerabilities
 RUN apt-get update \
-	&& apt-get install -y --no-install-recommends build-essential \
+	&& apt-get install -y --no-install-recommends build-essential wait-for-it \
 	&& apt-get upgrade -y \
 	&& apt-get clean \
 	&& rm -rf /var/lib/apt/lists/* \
@@ -24,4 +24,6 @@ COPY . .
 EXPOSE 8000
 
 # Run the app
-CMD ["uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["wait-for-it", "db:5432", "--", "uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "8000"]
+
+	

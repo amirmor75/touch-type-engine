@@ -3,7 +3,7 @@ import random
 import json
 import os
 from collections import defaultdict
-import scripts.drills as drills
+import scripts.load_drills as load_drills
 
 drill_names = [
     "home_row",
@@ -13,7 +13,7 @@ drill_names = [
     "bottom_row",
     "mixed"
 ]
-target_text = drills.get_drill_text(random.choice(drill_names))
+target_text = load_drills.get_drill_text(random.choice(drill_names))
 
 
 def compute_wpm(self):

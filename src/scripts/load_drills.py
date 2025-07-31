@@ -1,12 +1,21 @@
+import json
 import random
+
+from dotenv import load_dotenv
 from sklearn.datasets import fetch_20newsgroups
+load_dotenv()
+from src.models import Drill
+
+
+
+from src.db import get_db, init_db
 
 
 def create_texts():
     """
     Create a list of text documents for testing purposes.
     """
-    data = fetch_20newsgroups(subset='train', categories=['sci.space', 'comp.graphics'])
+    data = fetch_20newsgroups(subset="train", categories=["sci.space", "comp.graphics"])
     texts = data.data[:50]
     return texts
 
@@ -28,7 +37,7 @@ def create_drills(base_chars="asdf jkl;", min_len=3, max_len=6, count=10):
     base_chars = base_chars.replace(" ", "")  # remove spaces for generation
     while len(drills) < count:
         length = random.randint(min_len, max_len)
-        drill = ''.join(random.choices(base_chars, k=length))
+        drill = "".join(random.choices(base_chars, k=length))
         if not all(c == drill[0] for c in drill):  # avoid 'aaa', 'sss'
             drills.add(drill)
     return sorted(drills)
@@ -49,6 +58,7 @@ def generate_all_drills():
         "mixed": create_drills("asdf jkl; qwer uiop zxcv nm,.", count=20),
     }
 
+
 def get_random_paragraph():
     """
     Fetches a random paragraph from the 20 Newsgroups dataset.
@@ -58,6 +68,7 @@ def get_random_paragraph():
     """
     texts = create_texts()
     return random.choice(texts)
+
 
 def get_drill_text(drill_name):
     """
@@ -70,4 +81,41 @@ def get_drill_text(drill_name):
         str: The corresponding drill text.
     """
     drills = generate_all_drills()
-    return f'{drill_name}:{drills.get(drill_name, [])}'
+    return f"{drill_name}:{drills.get(drill_name, [])}"
+
+
+def load_drills_from_json(json_path: str):
+    print(f"Loading drills from {json_path}...")
+    init_db()
+    session = get_db().send(None)
+
+    with open(json_path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+
+    for entry in data.get("exercises", []):
+        print(f"Processing drill: {entry['name']}")
+        drill = Drill(
+            type=entry.get("cluster", "unknown"),
+            content=entry["text"],
+            explanation=None,
+            metadata={
+                "word_count": entry.get("word_count"),
+                "char_count": entry.get("char_count"),
+                "char_distribution": entry.get("char_distribution"),
+                "cluster_focus_score": entry.get("cluster_focus_score"),
+                "contains_punctuation": entry.get("contains_punctuation"),
+                "contains_capitals": entry.get("contains_capitals"),
+                "readability_score": entry.get("readability_score"),
+            },
+        )
+        session.add(drill)
+        session.commit()
+    print("Drills loaded successfully.")
+
+
+if __name__ == "__main__":
+
+    # Example usage
+    json_path = "./src/drills.json"
+    load_drills_from_json(json_path)
+    print("Drills loaded from JSON.")
