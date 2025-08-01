@@ -84,32 +84,32 @@
     {
       "cluster": "punctuation_and_symbols",
       "class number": "8A",
-      "text": "She said, \"Wait!\" (then left). Do you need help? Yes/no. [Start] > Run -> End; Press 'Enter' when ready. Type: hello@example.com or visit www.example.org — fast, simple, clear. He asked, “Really?” Yes, really."
+      "text": "She said, \"Wait!\" (then left). Do you need help? Yes/no. [Start] > Run -> End; Press 'Enter' when ready. Type: hello@example.com or visit www.example.org - fast, simple, clear. He asked, “Really?” Yes, really."
     },
     {
       "cluster": "punctuation_and_symbols",
       "class number": "8B",
-      "text": "Total: $45.67 — Due: now! Click 'Yes' to continue; 'No' to cancel. Warning: Access denied. Try again. Use keys: ctrl+z, ctrl+c, ctrl+v. Ready (y/n)? File path: C:\\User\\Docs\\test.txt — complete? Yes!"
+      "text": "Total: $45.67 - Due: now! Click 'Yes' to continue; 'No' to cancel. Warning: Access denied. Try again. Use keys: ctrl+z, ctrl+c, ctrl+v. Ready (y/n)? File path: C:\\User\\Docs\\test.txt - complete? Yes!"
     },
     {
       "cluster": "sentence_flow",
       "class number": "9A",
-      "text": "The quick brown fox jumps over the lazy dog. Typing practice builds rhythm and strength. Focus first on accuracy, then slowly introduce speed. Mistakes happen — slow down, breathe, and recover. Good posture helps your form."
+      "text": "The quick brown fox jumps over the lazy dog. Typing practice builds rhythm and strength. Focus first on accuracy, then slowly introduce speed. Mistakes happen - slow down, breathe, and recover. Good posture helps your form."
     },
     {
       "cluster": "sentence_flow",
       "class number": "9B",
-      "text": "Every good sentence flows naturally and feels smooth to the mind. When fingers hesitate, the thought often breaks. Stay steady. Let your hands glide. Read ahead, anticipate the keys, and move with rhythm — not force, but ease."
+      "text": "Every good sentence flows naturally and feels smooth to the mind. When fingers hesitate, the thought often breaks. Stay steady. Let your hands glide. Read ahead, anticipate the keys, and move with rhythm - not force, but ease."
     },
     {
       "cluster": "precision_speed_rounds",
       "class number": "10A",
-      "text": "fast fast faster! slow slow slower. jack jumped just in time. can you keep up with this line? move with care — aim for clarity. don't rush blindly. hit every key like it matters, because it does. keep moving!"
+      "text": "fast fast faster! slow slow slower. jack jumped just in time. can you keep up with this line? move with care - aim for clarity. don't rush blindly. hit every key like it matters, because it does. keep moving!"
     },
     {
       "cluster": "precision_speed_rounds",
       "class number": "10B",
-      "text": "dash, then tap — quick! pause; then go. miss. hit. mark. reset. now go again! the goal: sharp and clean hits under pressure. you know the keys — trust your fingers. focus, breathe, fire through. precision builds power."
+      "text": "dash, then tap - quick! pause; then go. miss. hit. mark. reset. now go again! the goal: sharp and clean hits under pressure. you know the keys - trust your fingers. focus, breathe, fire through. precision builds power."
     }
   ]
 }

@@ -1,9 +1,19 @@
 import json
+import os
 import random
 
 from dotenv import load_dotenv
-from sklearn.datasets import fetch_20newsgroups
 load_dotenv()
+
+# Check if running locally and adjust DATABASE_URL if needed
+original_database_url = os.getenv("DATABASE_URL")
+if original_database_url and "db:5432" in original_database_url:
+    # Replace db:5432 with localhost:5432 for local development
+    local_database_url = original_database_url.replace("db:5432", "localhost:5432")
+    os.environ["DATABASE_URL"] = local_database_url
+    print("Adjusted DATABASE_URL for local development")
+
+from sklearn.datasets import fetch_20newsgroups
 from src.models import Drill
 
 
@@ -86,31 +96,42 @@ def get_drill_text(drill_name):
 
 def load_drills_from_json(json_path: str):
     print(f"Loading drills from {json_path}...")
+    
     init_db()
-    session = get_db().send(None)
+    
+    # Get database session properly
+    db_generator = get_db()
+    session = next(db_generator)
 
-    with open(json_path, "r", encoding="utf-8") as f:
-        data = json.load(f)
+    try:
+        with open(json_path, "r", encoding="utf-8") as f:
+            data = json.load(f)
 
-    for entry in data.get("exercises", []):
-        print(f"Processing drill: {entry['name']}")
-        drill = Drill(
-            type=entry.get("cluster", "unknown"),
-            content=entry["text"],
-            explanation=None,
-            metadata={
-                "word_count": entry.get("word_count"),
-                "char_count": entry.get("char_count"),
-                "char_distribution": entry.get("char_distribution"),
-                "cluster_focus_score": entry.get("cluster_focus_score"),
-                "contains_punctuation": entry.get("contains_punctuation"),
-                "contains_capitals": entry.get("contains_capitals"),
-                "readability_score": entry.get("readability_score"),
-            },
-        )
-        session.add(drill)
+        # Use "drills" instead of "exercises" to match JSON structure
+        for i, entry in enumerate(data.get("drills", [])):
+            # Generate a name since it's not in the JSON
+            drill_name = f"{entry.get('cluster', 'unknown')}_{entry.get('class number', str(i+1))}"
+            print(f"Processing drill: {drill_name}")
+            
+            drill = Drill(
+                id=f"drill_{i+1:03d}",
+                name=drill_name,
+                text=entry["text"],
+                type=entry.get("cluster", "unknown"),
+                tags=None,  # Could be derived from metadata if needed
+                topic=entry.get("cluster", "unknown")  # Use cluster as topic
+            )
+            session.merge(drill)
+        
+        # Commit all drills at once instead of one by one
         session.commit()
-    print("Drills loaded successfully.")
+        print("Drills loaded successfully.")
+        
+    except Exception as e:
+        session.rollback()
+        raise e
+    finally:
+        session.close()
 
 
 if __name__ == "__main__":
